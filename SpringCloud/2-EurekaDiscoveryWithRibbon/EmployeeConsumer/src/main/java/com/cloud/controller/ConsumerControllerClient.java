@@ -25,6 +25,8 @@ public class ConsumerControllerClient {
 		ServiceInstance serviceInstance = loadBalancerClient.choose("employee-producer");
 
 		String baseUrl = serviceInstance.getUri().toString();
+		
+		System.out.println("baseURL----------------------------------------------- " + baseUrl);
 
 		baseUrl = baseUrl + "/employee";
 
