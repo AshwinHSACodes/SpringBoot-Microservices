@@ -28,16 +28,16 @@ public class ConsumerControllerClient {
 		
 		System.out.println("baseURL----------------------------------------------- " + baseUrl);
 
-		baseUrl = baseUrl + "/employee";
+		baseUrl = baseUrl + "/employee"; 
 
-		RestTemplate restTemplate = new RestTemplate();
+		RestTemplate restTemplate = new RestTemplate(); 
 		ResponseEntity<String> response = null;
 		try {
 			response = restTemplate.exchange(baseUrl, HttpMethod.GET, getHeaders(), String.class);
 		} catch (Exception ex) {
 			System.out.println(ex);
-		}
-		System.out.println(response.getBody());
+		} 
+		System.out.println(response.getBody()); 
 	}
 
 	private static HttpEntity<?> getHeaders() throws IOException {
