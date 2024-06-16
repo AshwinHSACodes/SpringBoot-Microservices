@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: 5600G
+Build-Jdk: 17.0.7
+Implementation-Title: EmployeeZuulService
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.cloud
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: https://spring.io/projects/spring-boot/EmployeeZuulS
+ ervice
+Created-By: Maven Integration for Eclipse
+
