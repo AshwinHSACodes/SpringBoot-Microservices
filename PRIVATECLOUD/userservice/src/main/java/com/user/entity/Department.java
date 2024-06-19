@@ -2,6 +2,7 @@ package com.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,30 +17,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class User {
+public class Department {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Long id;
+	Long id;
 	
 	@Column
-	private String firstName;
+	String deptName;
 	
-	@Column
-	private String lastName;
-	
-	@Column
-	private String emailid;
-	
-	@Column
-	private String address;
-	
-	@Column
-	private String mobileno;
-	
-	@Column
-	private String userName;
-	
-	@Column
-	private String passWord;
 }
+

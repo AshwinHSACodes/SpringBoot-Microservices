@@ -3,9 +3,9 @@ package com.user.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.user.entity.User;
+import com.user.entity.Department;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-	User findByEmailid(String emailid);
+public interface DepartmentRepository extends JpaRepository<Department, Long>{
+
 }
