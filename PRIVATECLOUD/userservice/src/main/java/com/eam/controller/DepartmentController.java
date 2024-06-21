@@ -1,4 +1,4 @@
-package com.user.controller;
+package com.eam.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.user.entity.Department;
-import com.user.service.DepartmentService;
+import com.eam.entity.Department;
+import com.eam.service.DepartmentService;
 
 @RestController
 @RequestMapping("department")

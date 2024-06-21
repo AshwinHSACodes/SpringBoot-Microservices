@@ -1,9 +1,9 @@
-package com.user.repository;
+package com.eam.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.user.entity.Department;
+import com.eam.entity.Department;
 
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long>{

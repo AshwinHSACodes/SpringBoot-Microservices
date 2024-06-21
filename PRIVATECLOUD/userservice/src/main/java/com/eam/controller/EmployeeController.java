@@ -1,4 +1,4 @@
-package com.user.controller;
+package com.eam.controller;
 
 import java.util.List;
 
@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.user.entity.User;
-import com.user.service.UserService;
+import com.eam.entity.Employee;
+import com.eam.service.EmployeeService;
 
 @RestController
-@RequestMapping("user")
-public class UserController {
+@RequestMapping("employee")
+public class EmployeeController {
 
-	Logger logger = LoggerFactory.getLogger(UserController.class);
+	Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 	
 	@Autowired
-	UserService userService;
+	EmployeeService employeeService;
 	
 	@GetMapping("/hello")
 	public String sayHelloMethod() {
@@ -37,27 +37,27 @@ public class UserController {
 		return "Hello from user service";
 	}
 	
-	@PostMapping("adduser")
-	public User addUser(@RequestBody User user) {
-		logger.info("user : " + user);
-		return userService.addUser(user);
+	@PostMapping("saveEmployee")
+	public Employee addEmployee(@RequestBody Employee employee) {
+		logger.info("user : " + employee);
+		return employeeService.saveEmployee(employee);
 	}
 	
-	@GetMapping(value = "/getUserById/{id}")
-	public User getUserById(@PathVariable("id") Long id) {
+	@GetMapping(value = "/getEmployeeById/{id}")
+	public Employee getEmployeeById(@PathVariable("id") Long id) {
 		logger.info("id : " +id);
-		return userService.getUserById(id);
+		return employeeService.getEmployeeById(id);
 	}
 	
-	@GetMapping("/getAllUsers")
-	public List<User> getAllUsers(){
-		logger.info(" getAllUsers called");
-		return userService.getAllUsers();
+	@GetMapping("/getAllEmployees")
+	public List<Employee> getAllEmployees(){
+		logger.info(" getAllEmployees called");
+		return employeeService.getAllemployees();
 	}
 	
-	@GetMapping("/getByEmail/{emailid}")
-	public User getUserByEmail(@PathVariable(value = "emailid") String emailid) {
+	@GetMapping("/getEmployeeByEmail/{emailid}")
+	public Employee getEmployeeByEmail(@PathVariable(value = "emailid") String emailid) {
 		logger.info("emailid : " + emailid);
-		return userService.getUserByEmail(emailid);
+		return employeeService.getEmployeeByEmail(emailid);
 	}
 }

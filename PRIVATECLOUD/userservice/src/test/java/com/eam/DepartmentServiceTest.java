@@ -1,4 +1,4 @@
-package com.user;
+package com.eam;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -13,9 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.user.entity.Department;
-import com.user.repository.DepartmentRepository;
-import com.user.service.DepartmentService;
+import com.eam.entity.Department;
+import com.eam.repository.DepartmentRepository;
+import com.eam.service.DepartmentService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

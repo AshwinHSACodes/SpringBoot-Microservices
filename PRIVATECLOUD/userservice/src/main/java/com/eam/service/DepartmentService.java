@@ -1,12 +1,12 @@
-package com.user.service;
+package com.eam.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.user.entity.Department;
-import com.user.repository.DepartmentRepository;
+import com.eam.entity.Department;
+import com.eam.repository.DepartmentRepository;
 
 @Service
 public class DepartmentService {
