@@ -31,7 +31,7 @@ class EmployeeServiceTests {
 
 	@SuppressWarnings("removal")
 	@Test
-	public void test_addUser() {
+	public void test_addEmployee() {
 		Employee employee = new Employee(new Long(1), "Ashwin1", "Kumar1", "ashwin1@gmail.com", "Bengaluru", "1234567890",
 				"ashwin1", "ashwin1");
 		when(employeeService.saveEmployee(employee)).thenReturn(employee);
@@ -39,7 +39,7 @@ class EmployeeServiceTests {
 	}
 
 	@Test
-	public void test_getUserById() {
+	public void test_getEmployeeById() {
 		Employee employee = new Employee(new Long(1), "Ashwin1", "Kumar1", "ashwin1@gmail.com", "Bengaluru", "1234567890",
 				"ashwin1", "ashwin1");
 		when(employeeRepository.getById(new Long(1))).thenReturn(employee);
@@ -47,7 +47,7 @@ class EmployeeServiceTests {
 	}
 
 	@Test
-	public void test_getUserByEmail() {
+	public void test_getEmployeeByEmail() {
 		Employee user = new Employee(new Long(1), "Ashwin1", "Kumar1", "ashwin1@gmail.com", "Bengaluru", "1234567890",
 				"ashwin1", "ashwin1");
 		when(employeeService.getEmployeeByEmail("ashwin1@gmail.com")).thenReturn(user);

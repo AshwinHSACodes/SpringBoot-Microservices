@@ -28,7 +28,7 @@ public class DepartmentServiceTest {
 	DepartmentRepository departmentRepository;
 	
 	@Test
-	public void test_addDepartment() {
+	public void test_saveDepartment() {
 		Department department = new Department(1L, "ADMIN", "AdminWork", "AdminWork");
 		when(departmentRepository.save(department)).thenReturn(department);
 		
