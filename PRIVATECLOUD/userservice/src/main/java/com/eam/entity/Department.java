@@ -21,10 +21,16 @@ public class Department {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	Long id;
+	Long deptid;
 	
 	@Column
 	String deptName;
+	
+	@Column
+	String shortDescription;
+	
+	@Column
+	String description;
 	
 }
 

@@ -14,7 +14,7 @@ public class DepartmentService {
 	@Autowired
 	DepartmentRepository departmentRepository;
 	
-	public Department addDepartment(Department department) {
+	public Department saveDepartment(Department department) {
 		return departmentRepository.save(department);
 	}
 	

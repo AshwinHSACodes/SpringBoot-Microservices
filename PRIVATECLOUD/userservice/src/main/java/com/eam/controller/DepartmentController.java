@@ -23,10 +23,10 @@ public class DepartmentController {
 	@Autowired
 	DepartmentService departmentService;
 	
-	@PostMapping("addDepartment")
-	public Department addDepartment(@RequestBody Department department) {
+	@PostMapping("saveDepartment")
+	public Department saveDepartment(@RequestBody Department department) {
 		logger.info("Department : " + department);
-		return departmentService.addDepartment(department);
+		return departmentService.saveDepartment(department);
 	}
 	
 	@GetMapping("listAllDepartments")

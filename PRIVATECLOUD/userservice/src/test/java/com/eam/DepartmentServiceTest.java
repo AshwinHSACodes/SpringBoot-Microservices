@@ -29,21 +29,21 @@ public class DepartmentServiceTest {
 	
 	@Test
 	public void test_addDepartment() {
-		Department department = new Department(1L, "ADMIN");
+		Department department = new Department(1L, "ADMIN", "AdminWork", "AdminWork");
 		when(departmentRepository.save(department)).thenReturn(department);
 		
-		assertEquals(department, departmentService.addDepartment(department));
+		assertEquals(department, departmentService.saveDepartment(department));
 	}
 	
 	@Test
 	public void test_getAllDepartments() {
 		List<Department> listOfDepartments = new ArrayList();
 		
-		Department department1 = new Department(1L, "department10");
-		Department department2 = new Department(1L, "department100");
-		Department department3 = new Department(1L, "department1000");
-		Department department4 = new Department(1L, "department100000");
-		Department department5 = new Department(1L, "department1000000");
+		Department department1 = new Department(1L, "department10", "", "");
+		Department department2 = new Department(1L, "department100", "", "");
+		Department department3 = new Department(1L, "department1000", "", "");
+		Department department4 = new Department(1L, "department100000", "", "");
+		Department department5 = new Department(1L, "department1000000", "", "");
 		
 		listOfDepartments.add(department1);
 		listOfDepartments.add(department2);
