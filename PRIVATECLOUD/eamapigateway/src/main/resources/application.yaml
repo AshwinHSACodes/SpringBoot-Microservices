@@ -1,0 +1,13 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: EAM-API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: EMPLOYEE-SERVICE
+          uri: http://localhost:8080
+          predicates:
+            - Path=/employee/**
