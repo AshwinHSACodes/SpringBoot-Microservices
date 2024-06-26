@@ -10,14 +10,13 @@ export class EmployeeServiceService {
 
   private saveEmployeeUrl = "http://localhost:8001/employee/saveEmployee";
   private getAllEmployeesUrl = "http://localhost:8001/employee/getAllEmployees";
-  private getEmployeesByIdUrl = "http://localhost:8080/employee/getEmployeeById/1";
+  private getEmployeesByIdUrl = "http://localhost:8001/employee/getEmployeeById/2";
   private sayHelloPostMethodCallUrl = "http://localhost:8001/employee/hello";
 
   constructor(private httpClient: HttpClient) { }
 
   saveEmployee(employee: Employee): Observable<Object> {
-    employee.empid = 0;
-    console.log("From saveEmployee method ......" + JSON.stringify(employee));
+    //console.log("From saveEmployee method ......" + JSON.stringify(employee));
     return this.httpClient.post(`${this.saveEmployeeUrl}`, employee);
   }
 
@@ -26,9 +25,10 @@ export class EmployeeServiceService {
     return this.httpClient.get(`${this.getAllEmployeesUrl}`);
   }
 
-  sayHelloPostMethodCall(): Observable<Object> {
+  sayHelloPostMethodCall(employee: Employee): Observable<Object> {
     console.log("From getAllEmployees method ......");
-    return this.httpClient.post(`${this.sayHelloPostMethodCallUrl}`, "Hello")
+    
+    return this.httpClient.post(`${this.sayHelloPostMethodCallUrl}`, employee);
   }
 
   getEmployeeById(id: number): Observable<Object> {

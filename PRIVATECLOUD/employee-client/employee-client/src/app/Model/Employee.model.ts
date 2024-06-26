@@ -1,10 +1,10 @@
 export class Employee{
     empid!: number;
-    firstName!: any;
-    lastName!: any;
-    emailid!: any;
-    address!: any;
-    mobileno!: any;
-    userName!: any;
-    passWord!: any;
+    firstName!: string;
+    lastName!: string;
+    emailid!: string;
+    address!: string;
+    mobileno!: string;
+    userName!: string;
+    passWord!: string;
 }
