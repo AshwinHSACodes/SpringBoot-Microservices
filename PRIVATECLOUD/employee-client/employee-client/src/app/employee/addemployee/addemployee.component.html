@@ -1,0 +1,44 @@
+<p>addemployee works!</p>
+
+<div class="container">
+    <h2>User Profile</h2>
+    <form [formGroup]="saveEmplyoeeFrom" (ngSubmit)="saveEmployee()">
+      <div class="form-group">
+        <label for="firstName">FirstName</label><br />
+        <input type="text" name="firstName" class="form-control" formControlName="firstName"/>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">LastName</label><br />
+        <input type="text" name="lastName" class="form-control" formControlName="lastName"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">EmailID</label><br />
+        <input type="text" name="emailid" class="form-control" formControlName="emailid"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="Address">Address</label><br />
+        <input type="text" name="address" class="form-control" formControlName="address"/>
+      </div>
+
+      <div class="form-group">
+        <label for="Mobile">Mobile</label><br />
+        <input type="text" name="mobileno" class="form-control" formControlName="mobileno"/>
+      </div>
+      
+      <div class="form-group">
+        <label for="UserName">UserName</label><br />
+        <input type="text" name="userName" class="form-control" formControlName="userName"/>
+      </div>
+
+      <div class="form-group">
+        <label for="Password">passWord</label><br />
+        <input type="password" name="passWord" class="form-control" formControlName="passWord"/>
+      </div>
+      <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+  </div>
+
+

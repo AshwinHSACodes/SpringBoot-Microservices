@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.eam.dto.Message;
 import com.eam.entity.Employee;
 import com.eam.service.EmployeeService;
 
@@ -37,7 +38,20 @@ public class EmployeeController {
 		return "Hello from user service";
 	}
 	
-	@PostMapping("saveEmployee")
+	@PostMapping("/hello")
+	public Message sayHelloPostMethod() {
+		logger.info("Say Hello post method......");
+        // Logging various log level messages 
+        logger.trace("Log level: TRACE"); 
+        logger.info("Log level: INFO"); 
+        logger.debug("Log level: DEBUG"); 
+        logger.error("Log level: ERROR"); 
+        logger.warn("Log level: WARN"); 
+		
+		return new Message("Hello from post method");
+	}
+	
+	@PostMapping("/saveEmployee")
 	public Employee addEmployee(@RequestBody Employee employee) {
 		logger.info("user : " + employee);
 		return employeeService.saveEmployee(employee);
