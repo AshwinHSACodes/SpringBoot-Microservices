@@ -58,5 +58,8 @@ public class MessagequeueApplication implements CommandLineRunner {
 		Runnable alertTask = RunnableTasks.getAlertTask();
 		executerService.execute(alertTask);
 		
+		Runnable analyzeTask = RunnableTasks.getAnalyzeTask();
+		executerService.execute(analyzeTask);
+		
 	}
 }

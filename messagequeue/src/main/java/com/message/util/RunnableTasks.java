@@ -4,7 +4,10 @@ import java.io.BufferedWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.stream.Stream;
 
@@ -76,7 +79,6 @@ public class RunnableTasks {
 					Stream<String> lines = Files.lines(fileReadPath);
 					lines.forEach(s->{
 						if( !s.equals("") && Integer.valueOf(String.valueOf(s.charAt(4)))>=8) {
-							System.out.println(localDateTime);
 							s = localDateTime.toString()+ s +"\n";
 							Util.writeToFile(s, alertFilePath);
 						}
@@ -92,5 +94,36 @@ public class RunnableTasks {
 		};
 		return alertTask;
 	}
+	
+	public static Runnable getAnalyzeTask() throws Exception{
+		
+		Path fileReadPath = Paths.get("A:\\AshwinHSACodes\\SpringBoot-Microservices\\messagequeue\\src\\main\\resources\\Alert.txt");
+		Path analysisWritePath = Paths.get("A:\\AshwinHSACodes\\SpringBoot-Microservices\\messagequeue\\src\\main\\resources\\Analysis.txt");
+		BufferedWriter analysisWriter = Files.newBufferedWriter(analysisWritePath);
+		LocalDateTime localDateTime = LocalDateTime.now();
+		
+		Map<String, Integer> temperatreMap = new HashMap<>();
+		Map<String, Integer> countMap = new HashMap<>();
+		
+		Runnable analysisTask = ()->{
+			while(true) {
+				try {
+					Thread.sleep(30000);
+					Stream<String> lines = Files.lines(fileReadPath);
+					Map<String, Map<String,Integer>> consolidatedMap = Util.getTemperatureNamesMappedValues(lines);
 
+					String outputString = LocalDateTime.now().toString() + "\n";
+					Util.writeToFile(outputString, analysisWritePath);
+					Util.writeToFile(consolidatedMap.get("machines").toString()+"\n", analysisWritePath);
+					Util.writeToFile(consolidatedMap.get("count").toString()+"\n", analysisWritePath);
+					analysisWriter.flush();
+					consolidatedMap.clear();
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		};
+		return analysisTask;
+	}
 }
