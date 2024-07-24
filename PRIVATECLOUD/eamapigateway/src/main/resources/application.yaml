@@ -11,3 +11,18 @@ spring:
           uri: http://localhost:8080
           predicates:
             - Path=/employee/**
+        - id: LOGIN-SERVICE
+          uri: http://localhost:9090
+          predicates:
+            - Path=/login/**
+      default-filters:
+          - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+          - AddResponseHeader=Access-Control-Allow-Origin, *            
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods:
+            - GET
+            - POST
