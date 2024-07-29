@@ -37,7 +37,7 @@ public class EmployeeController {
         logger.error("Log level: ERROR"); 
         logger.warn("Log level: WARN"); 
 		
-		return "Hello from user service";
+		return "Hello from employee controller service";
 	}
 	
 	@PostMapping("/hello")

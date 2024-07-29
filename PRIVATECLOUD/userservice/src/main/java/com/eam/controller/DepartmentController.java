@@ -23,6 +23,19 @@ public class DepartmentController {
 	@Autowired
 	DepartmentService departmentService;
 	
+	@GetMapping("/hello")
+	public String sayHelloMethod() {
+
+        // Logging various log level messages 
+        logger.trace("Log level: TRACE"); 
+        logger.info("Log level: INFO"); 
+        logger.debug("Log level: DEBUG"); 
+        logger.error("Log level: ERROR"); 
+        logger.warn("Log level: WARN"); 
+		
+		return "Hello from department controller service";
+	}
+	
 	@PostMapping("saveDepartment")
 	public Department saveDepartment(@RequestBody Department department) {
 		logger.info("Department : " + department);

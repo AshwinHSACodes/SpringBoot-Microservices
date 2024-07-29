@@ -7,10 +7,11 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: EMPLOYEE-SERVICE
+        - id: USER-SERVICE
           uri: http://localhost:8080
           predicates:
-            - Path=/employee/**
+            - Path=/employee/**, /attendance/**, /department/**, /empDept/**
+            
         - id: LOGIN-SERVICE
           uri: http://localhost:9090
           predicates:
